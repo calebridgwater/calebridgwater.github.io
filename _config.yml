@@ -28,7 +28,8 @@ twitter_username: calebridgwater
 github_username:  calebridgwater
 
 # Build settings
-theme: cayman
+# theme: cayman
+remote_theme: Cayman
 plugins:
   - jekyll-feed
 
