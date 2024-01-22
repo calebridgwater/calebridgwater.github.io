@@ -72,10 +72,58 @@ footer {
     padding: 1rem 0;
 }
 
+/* Resource Page Styles */
+.resource-banner {
+    background-color: #f0f0f0; /* Example color */
+    padding: 20px;
+    text-align: center;
+}
+
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.resource-tile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.resource-tile:hover {
+    transform: scale(1.05);
+}
+
+.resource-tile img {
+    max-width: 100%;
+    height: auto;
+}
+
+.resource-description {
+    display: none;
+}
+
+.resource-tile:hover .resource-description {
+    display: block;
+}
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     nav ul li {
         display: block;
         margin: 10px 0;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .tiles-grid {
+        grid-template-columns: 1fr;
     }
 }
