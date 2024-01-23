@@ -88,12 +88,20 @@ footer {
 
 .resource-tile {
     background-color: #29483c;
-    border: 1px solid #085c47;
+    border: 3px solid #085c47;
+    border-radius: 5px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to each tile */
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+.resource-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    direction: rtl; /* right to left grid population layout */
+    gap: 15px; /*adjusts gap between tiles*/
 }
 
 .resource-tile:hover {
