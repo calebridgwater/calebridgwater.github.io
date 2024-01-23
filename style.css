@@ -81,27 +81,34 @@ footer {
 
 .tiles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);  /*creates a three-column grid layout */
+    gap: 20px; /*spacing between tiles*/
     padding: 20px;
 }
 
 .resource-tile {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
+    background-color: #29483c;
+    border: 1px solid #085c47;
+    padding: 15px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to each tile */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .resource-tile:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* slightly enlarges the tile on hovering*/
 }
 
 .resource-tile img {
-    max-width: 100%;
+    max-width: 100%; /* ensures image takes up entire width of tile*/
     height: auto;
+    border-bottom: 1px solid #ddd; /* adding a line under image thumbnails to deliniate them. */
+}
+
+/* offsets every second row of the tile grid for a more organic layout */
+.tiles-grid > div:nth-child(3n+2) {
+    margin-top: 50px;
 }
 
 .resource-description {
