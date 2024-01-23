@@ -148,24 +148,20 @@ footer {
 }
 
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* Responsive adjustments for medium screens, for example, two-column layout */
+@media screen and (max-width: 992px) {
+    .tiles-grid {
+        grid-template-columns: repeat (3, 1fr); 
+        grid-template-rows: auto; /* Rows size to content */
+    }
     nav ul li {
         display: block;
         margin: 10px 0;
     }
 }
 
-/* Responsive adjustments for medium screens, for example, two-column layout */
-@media screen and (max-width: 992px) {
-    .tiles-grid {
-        grid-template-columns: 1fr; /* Stack tiles vertically on smaller screens */
-        grid-template-rows: auto; /* Rows size to content */
-    }
-}
-
 /* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     .tiles-grid {
         grid-template-columns: 1fr; /* Stack tiles vertically on smaller screens */
         grid-template-rows: auto; /* Rows size to content */
