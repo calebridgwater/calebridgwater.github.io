@@ -81,9 +81,12 @@ footer {
 
 .tiles-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /*creates a three-column grid layout */
-    gap: 20px; /*spacing between tiles*/
-    padding: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Creates a three-column grid layout */
+    grid-template-rows: repeat(3, 1fr); /* Creates a three-row grid layout for a 3x3 grid */
+    gap: 20px; /* Spacing between tiles */
+    padding: 20px; /* Spacing between the grid and the screen edge, matching the gap */
+    justify-content: center;
+    align-content: center;
 }
 
 .resource-tile {
@@ -156,14 +159,16 @@ footer {
 /* Responsive adjustments for medium screens, for example, two-column layout */
 @media screen and (max-width: 992px) {
     .tiles-grid {
-        grid-template-columns: repeat(2, 1fr); /* changes to a two-column layout for medium screens */
+        grid-template-columns: 1fr; /* Stack tiles vertically on smaller screens */
+        grid-template-rows: auto; /* Rows size to content */
     }
 }
 
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 768px) {
     .tiles-grid {
-        grid-template-columns: 1fr; /* changes to a single-column layout for small screens */
+        grid-template-columns: 1fr; /* Stack tiles vertically on smaller screens */
+        grid-template-rows: auto; /* Rows size to content */
     }
     nav ul li {
         display: block;
