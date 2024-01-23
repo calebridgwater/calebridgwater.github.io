@@ -104,6 +104,21 @@ footer {
     gap: 15px; /*adjusts gap between tiles*/
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px; /* Adjust the gap size as needed */
+    margin: 16px;
+  }
+  
+  .grid-item {
+    background: #4CAF50; /* Sample background color */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+  }  
+
 .resource-tile:hover {
     transform: scale(1.05); /* slightly enlarges the tile on hovering*/
 }
@@ -112,6 +127,7 @@ footer {
     max-width: 100%; /* ensures image takes up entire width of tile*/
     height: auto;
     border-bottom: 1px solid #ddd; /* adding a line under image thumbnails to deliniate them. */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* adds smooth transition for shadow as well */
 }
 
 /* offsets every second row of the tile grid for a more organic layout */
@@ -123,8 +139,9 @@ footer {
     display: none;
 }
 
-.resource-tile:hover .resource-description {
-    display: block;
+.resource-tile:hover {
+    transform: scale(1.05); /* slightly enlarges the tile on hovering */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* adds more prominent shadow on hover */
 }
 
 
@@ -136,9 +153,20 @@ footer {
     }
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 600px) {
+/* Responsive adjustments for medium screens, for example, two-column layout */
+@media screen and (max-width: 992px) {
     .tiles-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* changes to a two-column layout for medium screens */
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .tiles-grid {
+        grid-template-columns: 1fr; /* changes to a single-column layout for small screens */
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
     }
 }
